@@ -1,0 +1,19 @@
+private void button1_Click(object sender, EventArgs e)
+    {
+        int size = -1;
+        DialogResult result = openFileDialog1.ShowDialog();
+        if (result == DialogResult.OK)
+        {
+            string file = openFileDialog1.FileName;
+            try
+            {
+            string text = File.ReadAllText(file);
+            size = text.Length;
+            }
+            catch (IOException) { }
+        }
+
+        Console.WriteLine(size);
+        Console.WriteLine(result);
+   }
+   
